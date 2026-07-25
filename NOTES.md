@@ -15,21 +15,18 @@
 > via the `<>` HTML view. The visual editor can strip the `<style>` and
 > `<script>` tags that power the design and countdown timer.
 
-## Swapping in real images
+## Swapping in real images (2 steps per image)
 
-Search the file for `IMG-SLOT` — there are 11 slots, each a labelled placeholder
-box. Upload each image via **Shopify Admin → Content → Files**, copy its CDN
-URL, then replace the whole `<div class="ld7-ph" ...>...</div>` block with:
+1. **Shopify Admin → Content → Files → Upload** the image, then copy its link
+   (⧉ icon next to the file).
+2. In the page's `<>` HTML view, search for `IMG-SLOT` (11 slots). Just below
+   each slot marker is an `<img ...>` tag whose `src="..."` currently holds a
+   long `data:image/svg+xml,...` placeholder. **Replace everything between the
+   quotes of `src="..."` with your copied link.** Touch nothing else — the
+   sizing, lazy-loading and styling are already on the tag.
 
-```html
-<img class="ld7-img" src="CDN-URL-HERE" alt="Description" loading="lazy" width="800" height="500">
-```
-
-For testimonial avatars replace the `<div class="ld7-avatar">...</div>` with:
-
-```html
-<img class="ld7-avatar" src="CDN-URL-HERE" alt="David K." loading="lazy" width="80" height="80" style="object-fit:cover;border:none;">
-```
+Slot list: 1 diagram · 2 Burdock · 3 Cleavers · 4 Yarrow · 5–7 avatars
+(David/Mark/James) · 8 Dandelion · 9 mechanism visual · 10 bottle · 11 bundle.
 
 Logo: search `LOGO-SLOT` (header is on white — use the black logo version).
 
