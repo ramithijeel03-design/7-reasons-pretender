@@ -1,58 +1,55 @@
-# LymphDrop — 7 Reasons Pre-Lander — Deployment Notes
+# LymphDrop — 7 Reasons Pre-Lander — Deployment Notes (v2)
 
-**File:** `7-reasonsv1.html` — a single self-contained HTML/CSS/JS block for a Shopify page. No PageFly, no external assets, no dependencies.
+**File:** `7-reasonsv1.html` — a single self-contained block for a Shopify page.
+Javvy-style layout, brand teal, launch-ready: every image is live (product
+photos load from your store CDN, diagrams and avatars are built-in vector
+graphics). Nothing to fill in.
 
 ## How to deploy
 
-1. Shopify Admin → **Online Store → Pages → Add page** (or open the draft page if one was already created for you).
+1. Shopify Admin → **Online Store → Pages → Add page**.
 2. Title: `7 Reasons Why LymphDrop Uses 11 Herbs Instead of 4`.
 3. In the content editor toolbar click the **`<>` (Show HTML)** button.
 4. Paste the ENTIRE contents of `7-reasonsv1.html`.
 5. Set **Search engine listing → URL handle** to `7-reasonsv1`.
-6. Save. Set visibility when ready to go live.
+6. Save → set visibility → done.
 
-> ⚠️ **Never re-save the page from the visual (rich text) mode.** Always edit
-> via the `<>` HTML view. The visual editor can strip the `<style>` and
-> `<script>` tags that power the design and countdown timer.
+> ⚠️ **Only ever edit this page via the `<>` HTML view.** Saving from the
+> visual (rich text) editor can strip the styles and the countdown script.
 
-## Swapping in real images (2 steps per image)
+## Images
 
-1. **Shopify Admin → Content → Files → Upload** the image, then copy its link
-   (⧉ icon next to the file).
-2. In the page's `<>` HTML view, search for `IMG-SLOT` (11 slots). Just below
-   each slot marker is an `<img ...>` tag whose `src="..."` currently holds a
-   long `data:image/svg+xml,...` placeholder. **Replace everything between the
-   quotes of `src="..."` with your copied link.** Touch nothing else — the
-   sizing, lazy-loading and styling are already on the tag.
+| Where | Source |
+|---|---|
+| Reason 3 | Herbs infographic `L3.png` from your CDN — CSS-cropped to hide the bottom "6 Traditional Herbs" text row, which contradicts the 11-herb story (it also names red clover, which isn't on your label) |
+| Reason 5 | Supplement Facts panel `L6.png` (all 11 herbs on the label) |
+| Reason 7 | Bottle photo `L1.png` |
+| Final offer | Box + bottle photo `L2.png` |
+| Reasons 1, 2, 4, 6 | Built-in vector diagrams (4 stages, dissolve, pump, liposome vs stomach acid) in brand colours |
+| Testimonials | Built-in monogram avatars (DK / MT / JR) |
 
-Slot list: 1 diagram · 2 Burdock · 3 Cleavers · 4 Yarrow · 5–7 avatars
-(David/Mark/James) · 8 Dandelion · 9 mechanism visual · 10 bottle · 11 bundle.
+To swap any photo later: find its `<img ... src="https://cdn.shopify.com/...">`
+tag and replace the URL between the `src="..."` quotes.
+Logo: search `LOGO-SLOT` to swap the text wordmark for your black logo image.
 
-Logo: search `LOGO-SLOT` (header is on white — use the black logo version).
+> Note: if you ever fix the infographic's "6 Traditional Herbs" row to say 11,
+> you can remove the crop by deleting the `<div class="ld7-crop">` wrapper
+> around that image.
 
-## Countdown timer behaviour
+## Countdown timer
 
-- 24-hour countdown, stored in `sessionStorage` — resets on every new visit
-  (new tab/session), persists across refreshes within the same visit.
-- Top bar and final offer block are synced (same storage key `ld7TimerEnd`).
-- Rolls back to 24:00:00 if it ever hits zero mid-session.
-
-## Optional: hide theme header/footer
-
-The page works inside your normal theme layout. For a cleaner pre-lander
-(recommended for paid traffic), create a stripped page template:
-
-1. Online Store → Themes → ⋯ → **Edit code**.
-2. Under **Templates**, add a new template: type `page`, name `prelander`.
-3. In the new template remove/keep sections as desired (remove header/footer
-   section references in a JSON template, keep only the main page content).
-4. Assign it to the page under **Theme template** on the page editor sidebar.
+- Counts down to **2:00 PM Australia/Sydney, every day** (DST-safe via the
+  browser's timezone database; falls back to UTC+10 on very old browsers).
+- Top bar and final offer block always show the same time.
+- At 2pm it rolls over to the next day automatically.
 
 ## QA checklist before sending traffic
 
-- [ ] Open on a phone: countdown visible without scrolling.
-- [ ] All 4 CTA buttons land on the PDP with `?utm_source=meta&utm_medium=paid&utm_campaign=prelander&utm_content=7reasons` intact and 50% compare-at pricing showing.
+- [ ] Open on a phone: teal SALE ENDS IN bar + timer visible without scrolling.
+- [ ] Timer shows time remaining until 2pm Sydney (not a fixed 24h).
+- [ ] All 4 product photos load (they come from cdn.shopify.com).
+- [ ] Reason 3 image is cropped — no "6 Traditional Herbs" text visible.
+- [ ] All 5 CTA buttons land on the PDP with the UTM string intact and
+      $39.95 / $79.95 compare-at pricing showing.
 - [ ] Comparison table swipes horizontally on mobile.
-- [ ] Timer resets in a fresh incognito tab.
-- [ ] Real images swapped in, no placeholder boxes left.
-- [ ] Microsoft Clarity session shows up for the page (installed store-wide, nothing extra needed).
+- [ ] Microsoft Clarity records the page (installed store-wide, nothing to add).
