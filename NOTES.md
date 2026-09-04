@@ -1,21 +1,15 @@
-# LymphDrop — 7 Reasons Pre-Lander — Deployment Notes (v2)
+# LymphDrop — 7 Reasons Pre-Lander — Deployment Notes (v4)
 
-**File:** `7-reasonsv1.html` — a single self-contained block for a Shopify page.
-Javvy-style layout (v3: top section is a 1:1 copy of the Javvy format — left
-H1, avatar byline, quote hook, elevated logo-card comparison table, plain
-TLDR), brand teal, launch-ready.
-
-**One 30-second step:** upload the Brian author photo to
-**Shopify Admin → Content → Files** with the exact filename
-**`brian-avatar.png`**. The byline is pre-wired to that URL; until the file
-exists it shows a "BM" monogram circle instead. Everything else is live —
-product photos and your black logo load from your store CDN.
+**File:** `7-reasonsv1.html` — single self-contained block for a Shopify page.
+Built to the v2 rebuild brief: Javvy 1:1 layout, image-left/text-right
+reasons, inline 👉 CTA links, cream dashed final offer block. Launch-ready —
+**every image loads live from your store CDN, nothing to upload.**
 
 ## How to deploy
 
 1. Shopify Admin → **Online Store → Pages → Add page**.
 2. Title: `7 Reasons Why LymphDrop Uses 11 Herbs Instead of 4`.
-3. In the content editor toolbar click the **`<>` (Show HTML)** button.
+3. Click the **`<>` (Show HTML)** button in the content editor toolbar.
 4. Paste the ENTIRE contents of `7-reasonsv1.html`.
 5. Set **Search engine listing → URL handle** to `7-reasonsv1`.
 6. Save → set visibility → done.
@@ -23,41 +17,43 @@ product photos and your black logo load from your store CDN.
 > ⚠️ **Only ever edit this page via the `<>` HTML view.** Saving from the
 > visual (rich text) editor can strip the styles and the countdown script.
 
-## Images
+## Page structure (per brief v2)
 
-| Where | Source |
-|---|---|
-| Comparison table card | Your black logo `Screenshot_2026-05-14_at_7.10.40_pm.png` (the same file your theme header uses), blended onto the card with `mix-blend-mode:multiply` so its white background disappears |
-| Byline avatar | `brian-avatar.png` — **you upload this** (see above); "BM" monogram fallback until then |
-| Reason 3 | Herbs infographic `L3.png` from your CDN — CSS-cropped to hide the bottom "6 Traditional Herbs" text row, which contradicts the 11-herb story (it also names red clover, which isn't on your label) |
-| Reason 5 | Supplement Facts panel `L6.png` (all 11 herbs on the label) |
-| Reason 7 | Bottle photo `L1.png` |
-| Final offer | Box + bottle photo `L2.png` |
-| Reasons 1, 2, 4, 6 | Built-in vector diagrams (4 stages, dissolve, pump, liposome vs stomach acid) in brand colours |
-| Testimonials | Built-in monogram avatars (DK / MT / JR) |
+- Sticky teal announcement bar: 🔥 50% off + SALE ENDS IN countdown
+- Left-aligned headline → avatar byline (Research Team, Sep 2026) → quote hook
+- Comparison table: LymphDrop column card with teal header, 5 rows, ✅/❌
+- TLDR line
+- Reasons 1–7: square image left (40%) / number + headline + body right;
+  stacked image-top on mobile; herbs as bullets in reasons 5 & 6
+- Inline 👉 teal underlined CTA links after reasons 3, 4, 5, 6, 7 only
+  (unique anchor text each, all carrying the UTM string)
+- Centred escalation block with ✨ subtext
+- Final CTA: cream `#FFFBF0` dashed box — product image left; 🎁 FREE BOTTLE
+  badge, 50% OFF headline, demand line, synced timer, dark-teal pill button,
+  risk line right
+- Compliance footer
 
-To swap any photo later: find its `<img ... src="https://cdn.shopify.com/...">`
-tag and replace the URL between the `src="..."` quotes.
-Logo: search `LOGO-SLOT` to swap the text wordmark for your black logo image.
+Removed from previous build: testimonials band, herb cards, SVG diagrams,
+logo header.
 
-> Note: if you ever fix the infographic's "6 Traditional Herbs" row to say 11,
-> you can remove the crop by deleting the `<div class="ld7-crop">` wrapper
-> around that image.
+## Images (all live)
+
+Reasons 1–7: `Reason_1.png` … `Reason_7.png` · Author avatar:
+`untitled_Gemini_3_Nano_Banana_Pro__2026-09-04_03-27-33.png` · Final offer:
+`L2.png` — all on cdn.shopify.com, URLs exactly as briefed.
 
 ## Countdown timer
 
-- Counts down to **2:00 PM Australia/Sydney, every day** (DST-safe via the
-  browser's timezone database; falls back to UTC+10 on very old browsers).
-- Top bar and final offer block always show the same time.
-- At 2pm it rolls over to the next day automatically.
+Counts down to **2:00 PM Australia/Sydney daily** (DST-safe; UTC+10 fallback
+on ancient browsers). Top bar and final block always in sync; rolls over at
+2pm automatically.
 
-## QA checklist before sending traffic
+## QA before traffic
 
-- [ ] Open on a phone: teal SALE ENDS IN bar + timer visible without scrolling.
-- [ ] Timer shows time remaining until 2pm Sydney (not a fixed 24h).
-- [ ] All 4 product photos load (they come from cdn.shopify.com).
-- [ ] Reason 3 image is cropped — no "6 Traditional Herbs" text visible.
-- [ ] All 5 CTA buttons land on the PDP with the UTM string intact and
-      $39.95 / $79.95 compare-at pricing showing.
-- [ ] Comparison table swipes horizontally on mobile.
-- [ ] Microsoft Clarity records the page (installed store-wide, nothing to add).
+- [ ] Phone: sticky bar + timer visible on load; reason images stack on top.
+- [ ] All 9 images load (Reason_1–7, avatar, L2).
+- [ ] All 5 👉 links + final button land on the PDP with UTM intact and
+      $39.95 / $79.95 compare-at pricing.
+- [ ] Table swipes horizontally on mobile.
+- [ ] Timer shows time to 2pm Sydney, not a fixed 24h.
+- [ ] Clarity records the page (store-wide install, nothing to add).
