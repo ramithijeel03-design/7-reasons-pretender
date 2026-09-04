@@ -1,20 +1,23 @@
 <meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&amp;display=swap">
 <!--
 =====================================================================
-LYMPHDROP - 7 REASONS PRE-LANDER  (v2 - Javvy style, launch-ready)
+LYMPHDROP - 7 REASONS PRE-LANDER  (v3 - Javvy 1:1 top section)
 Paste this ENTIRE file into a Shopify page:
 Online Store > Pages > Add page > click the  < >  (Show HTML) button
 in the content editor toolbar > paste > Save.
 IMPORTANT: only ever edit this page via the  < >  HTML view. Saving
 from the visual (rich text) editor can strip styles and scripts.
 
-All images are live: product photos load from your store CDN
-(cdn.shopify.com L1/L2/L3/L6) and diagrams/avatars are built-in
-vector graphics. Nothing to fill in.
+Images: product photos + your black logo load from your store CDN;
+diagrams/avatars are built-in vector graphics.
+ONE upload needed: add the Brian author photo to
+Shopify Admin > Content > Files with the EXACT filename
+  brian-avatar.png
+The byline is pre-wired to that URL and shows a monogram circle
+until the file exists.
 Timer: counts down to 2:00 PM Australia/Sydney every day, top and
 bottom instances synced.
-LOGO-SLOT: the header uses a text wordmark - swap for your black
-logo <img> any time.
 =====================================================================
 -->
 <div class="ld7">
@@ -32,72 +35,66 @@ logo <img> any time.
   </div>
   <div class="ld7-riskstrip">&#128293; <b>Sell-Out Risk: HIGH</b> &#8212; 50% OFF your first order, applied automatically</div>
 
-  <!-- ============ LOGO HEADER ============ -->
-  <!-- LOGO-SLOT: replace the span below with
-       <img src="YOUR-BLACK-LOGO-URL" alt="LymphDrop" style="height:34px;width:auto;"> -->
-  <header class="ld7-header">
-    <span class="ld7-wordmark">LymphDrop<sup>&#8482;</sup></span>
-  </header>
-
   <main class="ld7-article">
 
-    <!-- ============ HEADLINE ============ -->
-    <h1 class="ld7-h1">7 Reasons Why LymphDrop Uses 11 Herbs Instead of&nbsp;4 &#8212; And Why Every Single One&nbsp;Matters</h1>
+    <!-- ============ HEADLINE (Javvy: left-aligned, chunky) ============ -->
+    <h1 class="ld7-h1">7 Reasons Why LymphDrop Uses 11 Herbs Instead of 4 &#8212; And Why Every Single One Matters</h1>
 
-    <!-- ============ BYLINE ============ -->
-    <p class="ld7-byline">By the LymphDrop Research Team&nbsp;&nbsp;|&nbsp;&nbsp;4 min read&nbsp;&nbsp;|&nbsp;&nbsp;Last updated July 2026</p>
+    <!-- ============ BYLINE (Javvy: avatar + two stacked lines) ============ -->
+    <div class="ld7-author">
+      <img class="ld7-author-img" src="https://cdn.shopify.com/s/files/1/0720/0286/3146/files/brian-avatar.png" alt="Brian M." width="56" height="56" onerror="this.style.display='none';document.getElementById('ld7-bm-fb').style.display='flex'">
+      <span class="ld7-author-fb" id="ld7-bm-fb">BM</span>
+      <span class="ld7-author-meta">By <b>Brian M.</b><br>Last Updated Sep 1, 2026</span>
+    </div>
 
-    <!-- ============ HOOK LINE ============ -->
-    <p class="ld7-hook"><em>Read this BEFORE you take another lymphatic supplement</em></p>
+    <!-- ============ HOOK LINE (Javvy: quote block, left bar) ============ -->
+    <p class="ld7-hook">"<b>Read this</b> BEFORE you take another lymphatic supplement!"</p>
 
-    <!-- ============ COMPARISON TABLE ============ -->
+    <!-- ============ COMPARISON TABLE (Javvy: elevated logo card) ============ -->
     <div class="ld7-tablewrap">
       <table class="ld7-table">
         <thead>
           <tr>
-            <th class="ld7-td-label"></th>
-            <th class="ld7-td-win">LymphDrop</th>
-            <th>Standard 4-Herb Formula</th>
-            <th>Capsules</th>
+            <th class="ld7-tl"></th>
+            <th class="ld7-win ld7-win-top">
+              <img class="ld7-tlogo" src="https://cdn.shopify.com/s/files/1/0720/0286/3146/files/Screenshot_2026-05-14_at_7.10.40_pm.png?v=1778753997" alt="LymphDrop" onerror="this.style.display='none';document.getElementById('ld7-lg-fb').style.display='inline'">
+              <span class="ld7-tlogo-fb" id="ld7-lg-fb">LymphDrop<sup>&#8482;</sup></span>
+            </th>
+            <th class="ld7-comp">4-Herb Formulas</th>
+            <th class="ld7-comp ld7-comp-end">Capsules</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="ld7-td-label">Herbs</td>
-            <td class="ld7-td-win"><strong>11</strong></td>
+            <td class="ld7-tl">&#127807; Herbs</td>
+            <td class="ld7-win"><b>11</b><i>across 4 stages</i></td>
             <td>4</td>
             <td>Varies</td>
           </tr>
           <tr>
-            <td class="ld7-td-label">Delivery</td>
-            <td class="ld7-td-win"><strong>Real Liposomal</strong></td>
+            <td class="ld7-tl">&#128167; Delivery</td>
+            <td class="ld7-win"><b>Real Liposomal</b><i>absorbs in minutes</i></td>
             <td>Standard liquid</td>
             <td>Destroyed by stomach acid</td>
           </tr>
           <tr>
-            <td class="ld7-td-label">Covers all 4 drainage steps</td>
-            <td class="ld7-td-win"><span class="ld7-yes">&#9989;</span></td>
-            <td><span class="ld7-no">&#10007;</span></td>
-            <td><span class="ld7-no">&#10007;</span></td>
+            <td class="ld7-tl">&#128260; Drainage stages</td>
+            <td class="ld7-win"><b>All 4</b><i>dissolve &#8594; protect</i></td>
+            <td>Stalls at 1&#8211;2</td>
+            <td>1 at best</td>
           </tr>
           <tr>
-            <td class="ld7-td-label">Actually reaches lymphatic system</td>
-            <td class="ld7-td-win"><span class="ld7-yes">&#9989;</span></td>
-            <td><span class="ld7-no">&#10007;</span></td>
-            <td><span class="ld7-no">&#10007;</span></td>
-          </tr>
-          <tr>
-            <td class="ld7-td-label">90-day money-back guarantee</td>
-            <td class="ld7-td-win"><span class="ld7-yes">&#9989;</span></td>
-            <td>&#8212;</td>
-            <td>&#8212;</td>
+            <td class="ld7-tl">&#128737;&#65039; 90-Day Guarantee</td>
+            <td class="ld7-win ld7-win-bottom"><svg class="ld7-face" viewBox="0 0 36 36" role="img" aria-label="yes"><circle cx="18" cy="18" r="15" fill="none" stroke="#3E9B4F" stroke-width="2.6"/><circle cx="12.5" cy="14.5" r="1.9" fill="#3E9B4F"/><circle cx="23.5" cy="14.5" r="1.9" fill="#3E9B4F"/><path d="M11.5,22 Q18,28 24.5,22" fill="none" stroke="#3E9B4F" stroke-width="2.6" stroke-linecap="round"/></svg></td>
+            <td><svg class="ld7-face" viewBox="0 0 36 36" role="img" aria-label="no"><circle cx="18" cy="18" r="15" fill="none" stroke="#8A8A98" stroke-width="2.6"/><circle cx="12.5" cy="14.5" r="1.9" fill="#8A8A98"/><circle cx="23.5" cy="14.5" r="1.9" fill="#8A8A98"/><path d="M11.5,25 Q18,19.5 24.5,25" fill="none" stroke="#8A8A98" stroke-width="2.6" stroke-linecap="round"/></svg></td>
+            <td><svg class="ld7-face" viewBox="0 0 36 36" role="img" aria-label="no"><circle cx="18" cy="18" r="15" fill="none" stroke="#8A8A98" stroke-width="2.6"/><circle cx="12.5" cy="14.5" r="1.9" fill="#8A8A98"/><circle cx="23.5" cy="14.5" r="1.9" fill="#8A8A98"/><path d="M11.5,25 Q18,19.5 24.5,25" fill="none" stroke="#8A8A98" stroke-width="2.6" stroke-linecap="round"/></svg></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- ============ TLDR ============ -->
-    <p class="ld7-tldr"><strong>TLDR: LymphDrop's 11 herbs cover every stage of lymphatic drainage &#8212; and real liposomal delivery makes sure they actually get there. Here's why that matters &#128071;</strong></p>
+    <!-- ============ TLDR (Javvy: plain one-liner) ============ -->
+    <p class="ld7-tldr"><b>TLDR:</b> LymphDrop covers all 4 stages of drainage &#8212; and actually absorbs &#128071;</p>
 
     <a class="ld7-btn" href="https://lymphdrop.com/products/lymphdrop%E2%84%A2-liposomal-lymphatic-drainage-drops?utm_source=meta&amp;utm_medium=paid&amp;utm_campaign=prelander&amp;utm_content=7reasons">Get LymphDrop 50% Off &#8594;</a>
     <p class="ld7-trust">&#11088;&#11088;&#11088;&#11088;&#11088; Trusted by 90,000+ men</p>
@@ -448,7 +445,7 @@ logo <img> any time.
 }
 .ld7 *,.ld7 *::before,.ld7 *::after{box-sizing:border-box;}
 .ld7 p{margin:0 0 1.05em;font-size:1em;color:var(--ink);}
-.ld7 h1,.ld7 h2{line-height:1.18;margin:0 0 .55em;color:var(--ink);font-weight:800;letter-spacing:-.015em;}
+.ld7 h1,.ld7 h2{font-family:'Poppins',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.18;margin:0 0 .55em;color:var(--ink);font-weight:800;letter-spacing:-.015em;}
 
 /* full-bleed helper */
 .ld7-bar,.ld7-riskstrip,.ld7-band{width:100vw;margin-left:calc(50% - 50vw);}
@@ -481,40 +478,59 @@ logo <img> any time.
 }
 .ld7-riskstrip b{font-weight:800;}
 
-/* ---- header ---- */
-.ld7-header{display:flex;justify-content:center;padding:20px 16px 4px;background:#fff;}
-.ld7-wordmark{font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--ink);}
-.ld7-wordmark sup{font-size:.38em;font-weight:700;top:-1.1em;position:relative;}
-
 /* ---- article column ---- */
 .ld7-article{max-width:720px;margin:0 auto;padding:8px 18px 0;}
 
-.ld7-h1{font-size:30px;margin-top:12px;text-align:center;}
-.ld7-byline{text-align:center;color:var(--ink-soft);font-size:13.5px;margin-bottom:6px;}
+/* ---- headline: left-aligned, chunky (Javvy) ---- */
+.ld7-h1{font-size:33px;margin-top:22px;text-align:left;line-height:1.12;letter-spacing:-.02em;}
+
+/* ---- author byline (Javvy: avatar + stacked lines) ---- */
+.ld7-author{display:flex;align-items:center;gap:13px;margin:18px 0 20px;}
+.ld7-author-img{width:56px;height:56px;border-radius:50%;object-fit:cover;display:block;flex:none;}
+.ld7-author-fb{
+  display:none;width:56px;height:56px;border-radius:50%;flex:none;
+  background:var(--teal-dark);color:#fff;font-weight:800;font-size:20px;
+  align-items:center;justify-content:center;
+}
+.ld7-author-meta{font-size:15.5px;line-height:1.45;color:var(--ink);}
+.ld7-author-meta b{font-weight:800;}
+
+/* ---- hook quote block (Javvy: left bar + tinted strip) ---- */
 .ld7-hook{
-  text-align:center;font-size:16.5px;color:var(--red-dark);font-weight:600;
-  border-top:1px solid var(--sage-line);border-bottom:1px solid var(--sage-line);
-  padding:10px 6px;margin:14px 0 22px;
+  background:var(--sage);border-left:5px solid var(--teal-deeper);
+  text-align:left;font-size:17.5px;color:var(--ink);font-weight:400;
+  padding:14px 16px;margin:0 0 26px;
 }
+.ld7-hook b{font-weight:800;}
 
-/* ---- comparison table ---- */
-.ld7-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 22px;border-radius:12px;border:1px solid var(--sage-line);}
-.ld7-table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px;background:#fff;}
-.ld7-table th,.ld7-table td{padding:11px 12px;text-align:center;border-bottom:1px solid var(--sage-line);}
-.ld7-table thead th{font-size:14px;font-weight:800;background:var(--sage);color:var(--ink);}
-.ld7-table tr:last-child td{border-bottom:none;}
-.ld7-td-label{text-align:left !important;font-weight:600;color:var(--ink-soft);min-width:160px;}
-.ld7-td-win{background:rgba(95,169,169,.14);color:var(--teal-deeper);font-weight:700;}
-.ld7-table thead .ld7-td-win{background:var(--teal);color:#fff;font-size:15px;}
-.ld7-yes{font-size:16px;}
-.ld7-no{color:var(--red);font-weight:800;font-size:17px;}
-
-/* ---- tldr ---- */
-.ld7-tldr{
-  background:var(--sage);border-left:4px solid var(--teal);
-  padding:15px 17px;border-radius:0 10px 10px 0;
-  font-size:17px;margin-bottom:18px;
+/* ---- comparison table (Javvy: open table, elevated winner card) ---- */
+.ld7-tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 20px;}
+.ld7-table{border-collapse:separate;border-spacing:0;width:100%;min-width:600px;font-size:15px;background:transparent;}
+.ld7-table th,.ld7-table td{padding:14px 10px;text-align:center;vertical-align:middle;}
+.ld7-table tbody td{border-bottom:1.5px dashed #DCDCE2;color:#6B6B76;}
+.ld7-table tbody tr:last-child td{border-bottom:none;}
+.ld7-tl{text-align:left !important;font-weight:700;color:var(--ink) !important;min-width:170px;font-size:15.5px;}
+th.ld7-tl{background:transparent;}
+.ld7-comp{background:#FBECEC;color:#B93835;font-weight:700;font-size:15.5px;padding:12px 10px;}
+.ld7-comp-end{border-radius:0 12px 12px 0;}
+.ld7-win{
+  background:#E7F4F3;color:var(--ink);
+  border-left:2px solid #C4E2E0;border-right:2px solid #C4E2E0;
 }
+.ld7-win-top{border-top:2px solid #C4E2E0;border-radius:14px 14px 0 0;padding:20px 12px 14px;}
+.ld7-win-bottom{border-bottom:2px solid #C4E2E0;border-radius:0 0 14px 14px;padding-bottom:20px;}
+td.ld7-win{border-bottom:1.5px dashed #C9E0DE !important;}
+td.ld7-win-bottom{border-bottom:2px solid #C4E2E0 !important;}
+.ld7-win b{display:block;font-size:17.5px;font-weight:800;color:var(--ink);}
+.ld7-win i{display:block;font-style:normal;font-size:12.5px;color:var(--ink-soft);margin-top:3px;}
+.ld7-tlogo{height:26px;width:auto;display:inline-block;vertical-align:middle;max-width:150px;object-fit:contain;mix-blend-mode:multiply;}
+.ld7-tlogo-fb{display:none;font-family:'Poppins',Arial,sans-serif;font-weight:800;font-size:19px;color:var(--ink);}
+.ld7-tlogo-fb sup{font-size:.4em;}
+.ld7-face{width:32px;height:32px;display:inline-block;vertical-align:middle;}
+
+/* ---- tldr (Javvy: plain one-liner) ---- */
+.ld7-tldr{font-size:17.5px;margin:0 0 20px;text-align:left;}
+.ld7-tldr b{font-weight:800;}
 
 /* ---- reasons (Javvy: number inline with headline, airy spacing) ---- */
 .ld7-reason{padding:16px 0 22px;}
@@ -615,7 +631,7 @@ logo <img> any time.
 
 /* ---- desktop type scale ---- */
 @media(min-width:700px){
-  .ld7-h1{font-size:40px;}
+  .ld7-h1{font-size:46px;}
   .ld7-h2{font-size:27px;}
   .ld7-esc-h{font-size:29px;}
   .ld7-offer-h{font-size:31px;}

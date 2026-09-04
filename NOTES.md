@@ -1,9 +1,15 @@
 # LymphDrop — 7 Reasons Pre-Lander — Deployment Notes (v2)
 
 **File:** `7-reasonsv1.html` — a single self-contained block for a Shopify page.
-Javvy-style layout, brand teal, launch-ready: every image is live (product
-photos load from your store CDN, diagrams and avatars are built-in vector
-graphics). Nothing to fill in.
+Javvy-style layout (v3: top section is a 1:1 copy of the Javvy format — left
+H1, avatar byline, quote hook, elevated logo-card comparison table, plain
+TLDR), brand teal, launch-ready.
+
+**One 30-second step:** upload the Brian author photo to
+**Shopify Admin → Content → Files** with the exact filename
+**`brian-avatar.png`**. The byline is pre-wired to that URL; until the file
+exists it shows a "BM" monogram circle instead. Everything else is live —
+product photos and your black logo load from your store CDN.
 
 ## How to deploy
 
@@ -21,6 +27,8 @@ graphics). Nothing to fill in.
 
 | Where | Source |
 |---|---|
+| Comparison table card | Your black logo `Screenshot_2026-05-14_at_7.10.40_pm.png` (the same file your theme header uses), blended onto the card with `mix-blend-mode:multiply` so its white background disappears |
+| Byline avatar | `brian-avatar.png` — **you upload this** (see above); "BM" monogram fallback until then |
 | Reason 3 | Herbs infographic `L3.png` from your CDN — CSS-cropped to hide the bottom "6 Traditional Herbs" text row, which contradicts the 11-herb story (it also names red clover, which isn't on your label) |
 | Reason 5 | Supplement Facts panel `L6.png` (all 11 herbs on the label) |
 | Reason 7 | Bottle photo `L1.png` |
